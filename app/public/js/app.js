@@ -1,7 +1,7 @@
 const baseUrl = "https://api.github.com/graphql";
 
 const github_data = {
-    "token" : "78f0dc3ce341e01e770c15b44101c273467fb5d5",
+    "token" : atob("ODg2ODlmM2IxMjg2ZTkzNjMxMGIxMGVhZjg4NmU4YTBiNWNlYTQ4ZQ=="),
     "username" : "tege3000"
 }
 
