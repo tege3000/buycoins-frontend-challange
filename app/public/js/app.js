@@ -5,23 +5,25 @@ const github_data = {
     "username" : "tege3000"
 }
 
-const query_repositories = {
+const query_details = {
     "query" : `
         query { 
             user(login: "${github_data["username"]}") {
-            repositories(first: 20) {
-                totalCount
-                nodes{
-                name
-                description
-                primaryLanguage {
+                avatarUrl
+                bio
+                repositories(first: 20) {
+                    totalCount
+                    nodes{
                     name
+                    description
+                    primaryLanguage {
+                        name
+                    }
+                    stargazerCount 
+                    forkCount
+                    updatedAt
+                    }
                 }
-                stargazerCount 
-                forkCount
-                updatedAt
-                }
-            }
             }
         }
     `
@@ -35,13 +37,18 @@ const headers =  {
 fetch(baseUrl, {
     method: "POST",
     headers: headers,
-    body: JSON.stringify(query_repositories)
+    body: JSON.stringify(query_details)
 })
     .then((response) => {        
         return response.json(); 
     })
     .then((data) => {
         console.log(data);
+        const profilePicIcon = document.createElement("img");
+        const profileIcon = document.getElementById("has-icon-profile");
+        profilePicIcon.className = "icon profile";
+        profilePicIcon.src = data["data"]["user"]["avatarUrl"];
+        profileIcon.prepend(profilePicIcon);
     })
     .catch((err) => {
         console.log("ERR", err);
