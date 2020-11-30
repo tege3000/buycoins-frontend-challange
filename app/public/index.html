@@ -4,30 +4,47 @@
         <link rel="stylesheet" href="/css/styles.css">
     </head>  
     <body>
-
         <nav class="main-nav" id="main-nav">
-            <div id="github-logo"><img src="/img/github-logo.png"></div>
-            <input class="search-input" type="text" placeholder="Search or jump to..."/>
-            <a href="#">Pull requests</a>
-            <a href="#">Issues</a>
-            <a href="#">Codespaces</a>
-            <a href="#">Marketplace</a>
-            <a href="#">Explore</a>
-        
-            <div class="nav-right">
-                <div class="icon-glued nav-r-one">
+            <div class="nav-main">
+                <a href="#" id="hamburger"><img class="icon" src="/img/hamburger.png"></a>
+                <div id="github-logo"><img src="/img/github-logo.png"></div>
+                <div class="bell-responsive">
                     <img class="icon bell" src="/img/bell-icon.svg">
                 </div>
+            </div>
+            <div class="nav-other" id="nav-other">
+                <div id="search"><input class="search-input" type="text" placeholder="Search or jump to..."/></div>
 
-                <div class="icon-glued nav-r-two">
-                    <img class="icon plus" src="/img/plus-icon.png">
-                    <img class="icon-2" src="/img/down-arrow.png">
-                </div>
+                <div id="nav-links" class="nav-links">
+                    <hr/>
+                    <a href="#">Pull requests</a>
+                    <hr/>
+                    <a href="#">Issues</a>
+                    <hr/>
 
-                <div id="has-icon-profile" class="icon-glued nav-r-three">
-                    <img class="icon-2" src="/img/down-arrow.png">
+                    <a href="#">Codespaces</a>
+                    <hr/>
+
+                    <a href="#">Marketplace</a>
+                    <hr/>
+
+                    <a href="#">Explore</a>
+                    <hr/>
                 </div>
-            </div> 
+            
+                <div class="nav-right nav-right">
+                    <div class="icon-glued nav-r-one">
+                        <img class="icon bell" src="/img/bell-icon.svg">
+                    </div>
+                    <div class="icon-glued nav-r-two">
+                        <img class="icon" src="/img/plus-icon.png">
+                        <img class="icon-2" src="/img/down-arrow.png">
+                    </div>
+                    <div id="has-icon-profile" class="icon-glued nav-r-three">
+                        <img class="icon-2" src="/img/down-arrow.png">
+                    </div>
+                </div> 
+            </div>
         </nav>
 
         <main class="main">

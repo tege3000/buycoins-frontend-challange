@@ -344,3 +344,14 @@ document.getElementById("submit-search-repo").addEventListener("submit", functio
 
 });
 
+/*
+ * Handles clicking on Hamburger
+ */
+document.getElementById("hamburger").addEventListener("click", function(){
+    let x = document.getElementById("nav-other");
+    if (x.className === "nav-other") {
+        x.className += " responsive";
+    } else {
+        x.className = "nav-other";
+    }
+});
