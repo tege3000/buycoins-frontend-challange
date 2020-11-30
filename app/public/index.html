@@ -38,13 +38,13 @@
                     </div>
                     <div id="profile-names">
                         <div>
-                            <h1>Tito Michael Egeonu</h1>
-                            <h4 class="greyed-out">tege3000</h4>
+                            <h1 id="profile-name"></h1>
+                            <h4 id="profile-username" class="greyed-out"></h4>
                         </div>
                     </div>
                 </div>
                 <div class="profile-description">
-                    <p>breaking things</p>
+                    <p id="profile-desc"></p>
                 </div>
             </div>
             <div class="repository-section">
@@ -53,24 +53,28 @@
                     <a href="#" class="active">Repositories</a>
                     <a href="#">Projects</a>
                     <a href="#">Packages</a>
-                </div>                
-            </div>
-        </main>
-        <hr/>
-        <main class="main">
-            <div class="repository-section">
+                </div> 
+                <hr/>               
+       
                 <div id="search-repo-input">
-                    <input id="search-repo" type="text" placeholder="Find a repository..."/>
-                </div>   
-            </div>
-            <hr/>
-        </main>
+                    <form id="submit-search-repo">
+                        <input id="search-repo" type="text" placeholder="Find a repository..."/>
+                        <input 
+                            type="submit" 
+                            style="position: absolute; left: -9999px; width: 1px; height: 1px;"
+                            tabindex="-1" 
+                        />
+                    </form>
+                </div>  
+                <hr/>
+ 
         
-        <main>
-            <p><b>124 </b>results for <b>public </b>repositories</p>
-            <div id="repo-list">
-                
+                <p><b id="result-count">124 </b>results for <b>public </b>repositories</p>
+                <div id="repo-list">
+                    
+                </div>
             </div>
+            
         </main>
 
 
