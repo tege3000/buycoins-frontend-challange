@@ -2,14 +2,15 @@
 <html lang="en">  
     <head>
         <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     </head>  
     <body>
         <nav class="main-nav" id="main-nav">
             <div class="nav-main">
-                <a href="#" id="hamburger"><img class="icon" src="/img/hamburger.png"></a>
-                <div id="github-logo"><img src="/img/github-logo.png"></div>
+                <a href="#" id="hamburger"><i class="fas fa-bars fa-lg fa-inverse"></i></a>
+                <div id="github-logo"><i class="fab fa-github fa-2x fa-inverse"></i></div>
                 <div class="bell-responsive">
-                    <img class="icon bell" src="/img/bell-icon.svg">
+                    <i class="far fa-bell fa-lg fa-inverse"></i>
                 </div>
             </div>
             <div class="nav-other" id="nav-other">
@@ -32,16 +33,16 @@
                     <hr/>
                 </div>
             
-                <div class="nav-right nav-right">
+                <div class="nav-right">
                     <div class="icon-glued nav-r-one">
-                        <img class="icon bell" src="/img/bell-icon.svg">
+                        <i class="far fa-bell fa-inverse"></i>
                     </div>
                     <div class="icon-glued nav-r-two">
-                        <img class="icon" src="/img/plus-icon.png">
-                        <img class="icon-2" src="/img/down-arrow.png">
+                        <i class="fas fa-plus fa-inverse"></i>
+                        <i class="fas fa-sort-down fa-inverse"></i>
                     </div>
                     <div id="has-icon-profile" class="icon-glued nav-r-three">
-                        <img class="icon-2" src="/img/down-arrow.png">
+                        <i class="fas fa-sort-down fa-inverse"></i>
                     </div>
                 </div> 
             </div>
@@ -66,10 +67,24 @@
             </div>
             <div class="repository-section">
                 <div class="repo-nav">
-                    <a href="#">Overview</a>
-                    <a href="/index.html" class="active">Repositories</a>
-                    <a href="#">Projects</a>
-                    <a href="#">Packages</a>
+                    <a href="#">
+                        <i class="fas fa-book-open">
+                        </i>
+                        Overview
+                    </a>
+                    <a href="/index.html" class="active-link">
+                        <i class="fas fa-book">
+                        </i>
+                        Repositories
+                    </a>
+                    <a href="#">
+                        <i class="far fa-chart-bar"></i>
+                        Projects
+                    </a>
+                    <a href="#">
+                        <i class="fas fa-cube"></i>
+                        Packages
+                    </a>
                 </div> 
                 <hr/>               
        
