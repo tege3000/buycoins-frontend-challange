@@ -86,6 +86,9 @@ fetch(baseUrl, {
     
         const repoLength = data["data"]["user"]["repositories"]["totalCount"];
 
+        const repoCountIcon = document.getElementById('repo-count-icon');
+        repoCountIcon.textContent = repoLength;
+
         for(let i = 0; i < repoLength; i++) {
             let description = data["data"]["user"]["repositories"]["nodes"][i]["description"];
             let forkCount = data["data"]["user"]["repositories"]["nodes"][i]["forkCount"];
@@ -136,6 +139,7 @@ fetch(baseUrl, {
             let primaryLanguage = ((data["data"]["user"]["repositories"]["nodes"][i]["primaryLanguage"]) != null) ? data["data"]["user"]["repositories"]["nodes"][i]["primaryLanguage"]["name"] : null;
 
             let repoDiv = document.createElement("div");
+            repoDiv.id = "repo-item";
             let firstHr = document.createElement("hr");
             repoDiv.append(firstHr);
 
@@ -149,6 +153,11 @@ fetch(baseUrl, {
             starButton.id = "star-repo-btn";
             starButton.className = "pull-right";
             starButton.textContent = "Star";
+
+            let starIconForButton = document.createElement("i");
+            starIconForButton.className = "far fa-star other-details-icons";
+            starButton.prepend(starIconForButton);
+            
             repoDetailsDiv.append(starButton);
             repoDiv.append(repoDetailsDiv);
 
@@ -166,18 +175,34 @@ fetch(baseUrl, {
             repoDetailsDiv3.id = "other-repo-details";
             repoDetailsDiv3.className = "repo-details greyed-out";
             if(primaryLanguage) {
+                let languageIcon = document.createElement("p")
+                if(primaryLanguage === 'C++') {
+                    languageIcon.id = "Cpp";
+                }
+                else {
+                    languageIcon.id = primaryLanguage;
+                }
+
                 let languageEl = document.createElement("small");
                 languageEl.id = "language";
                 languageEl.textContent = primaryLanguage;
+                repoDetailsDiv3.append(languageIcon);
+
                 repoDetailsDiv3.append(languageEl);
             }
             let starsEl = document.createElement("small");
             starsEl.id = "stars";
             starsEl.textContent = stargazerCount;
+            let starIcon = document.createElement("i");
+            starIcon.className = "far fa-star other-details-icons";
+            repoDetailsDiv3.append(starIcon);
             repoDetailsDiv3.append(starsEl);
             let forksEl = document.createElement("small");
             forksEl.id = "forks";
             forksEl.textContent = forkCount;
+            let forkIcon = document.createElement("i");
+            forkIcon.className = "fas fa-code-branch other-details-icons";
+            repoDetailsDiv3.append(forkIcon);
             repoDetailsDiv3.append(forksEl);
             let lastUpdatedEl = document.createElement("small");
             lastUpdatedEl.id = "last-updated";
@@ -298,24 +323,40 @@ document.getElementById("submit-search-repo").addEventListener("submit", functio
                 repoDetailsDiv3.id = "other-repo-details";
                 repoDetailsDiv3.className = "repo-details greyed-out";
                 if(primaryLanguage) {
-                    let languageEl = document.createElement("small");
-                    languageEl.id = "language";
-                    languageEl.textContent = primaryLanguage;
-                    repoDetailsDiv3.append(languageEl);
+                let languageIcon = document.createElement("p")
+                if(primaryLanguage === 'C++') {
+                    languageIcon.id = "Cpp";
                 }
-                let starsEl = document.createElement("small");
-                starsEl.id = "stars";
-                starsEl.textContent = stargazerCount;
-                repoDetailsDiv3.append(starsEl);
-                let forksEl = document.createElement("small");
-                forksEl.id = "forks";
-                forksEl.textContent = forkCount;
-                repoDetailsDiv3.append(forksEl);
-                let lastUpdatedEl = document.createElement("small");
-                lastUpdatedEl.id = "last-updated";
-                lastUpdatedEl.textContent = updatedAt;
-                repoDetailsDiv3.append(lastUpdatedEl);
-                repoDiv.append(repoDetailsDiv3);
+                else {
+                    languageIcon.id = primaryLanguage;
+                }
+
+                let languageEl = document.createElement("small");
+                languageEl.id = "language";
+                languageEl.textContent = primaryLanguage;
+                repoDetailsDiv3.append(languageIcon);
+
+                repoDetailsDiv3.append(languageEl);
+            }
+            let starsEl = document.createElement("small");
+            starsEl.id = "stars";
+            starsEl.textContent = stargazerCount;
+            let starIcon = document.createElement("i");
+            starIcon.className = "far fa-star other-details-icons";
+            repoDetailsDiv3.append(starIcon);
+            repoDetailsDiv3.append(starsEl);
+            let forksEl = document.createElement("small");
+            forksEl.id = "forks";
+            forksEl.textContent = forkCount;
+            let forkIcon = document.createElement("i");
+            forkIcon.className = "fas fa-code-branch other-details-icons";
+            repoDetailsDiv3.append(forkIcon);
+            repoDetailsDiv3.append(forksEl);
+            let lastUpdatedEl = document.createElement("small");
+            lastUpdatedEl.id = "last-updated";
+            lastUpdatedEl.textContent = updatedAt;
+            repoDetailsDiv3.append(lastUpdatedEl);
+            repoDiv.append(repoDetailsDiv3);
     
     
                 let searchRepoInput = document.getElementById("search-repo");

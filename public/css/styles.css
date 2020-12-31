@@ -202,6 +202,50 @@ small {
   border-bottom: 2px solid rgb(235, 158, 17);
 }
 
+#repo-item {
+  margin-bottom: 40px;
+}
+
+.repo-details p {
+  margin-top: 30px;
+}
+
+.other-details-icons {
+  margin-right: 2px;
+}
+
+#JavaScript {
+  margin-top: 13px;
+  margin-right: 3px;
+  border: 6px solid yellow;
+  border-radius: 50%;
+}
+
+#HTML {
+  margin-top: 13px;
+  margin-right: 3px;
+  border: 6px solid red;
+  border-radius: 50%;
+}
+
+#Cpp {
+  margin-top: 13px;
+  margin-right: 3px;
+  border: 6px solid blue;
+  border-radius: 50%;
+}
+
+#repo-count-icon {
+  border: 1px solid rgb(190, 190, 190);
+  padding: 3px;
+  color: rgb(61, 61, 61);
+  background-color: rgb(190, 190, 190);
+  width: 20px;
+  height: 20px;
+  border-radius: 40%;
+  display: inline;
+}
+
 /* For the nav bar when shrunk */
 @media screen and (max-width: 800px), screen and (max-device-width: 800px) {
   .main-nav {
